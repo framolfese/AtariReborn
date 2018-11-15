@@ -1,0 +1,207 @@
+@font-face {
+  font-family: SourceSansPro-Regular;
+  src: url('fonts/source-sans-pro/SourceSansPro-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: SourceSansPro-Bold;
+  src: url('fonts/source-sans-pro/SourceSansPro-Bold.ttf'); 
+}
+
+@font-face {
+  font-family: SourceSansPro-SemiBold;
+  src: url('fonts/source-sans-pro/SourceSansPro-SemiBold.ttf'); 
+}
+
+@font-face {
+  font-family: JosefinSans-Bold;
+  src: url('fonts/JosefinSans/JosefinSans-Bold.ttf'); 
+}
+
+#welcome_label{
+  color: red;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+  cursor: pointer;
+}
+
+.my_button{
+  color: #dc3545;
+  background-color: transparent;
+  background-image: none;
+}
+
+.my_button:hover {
+  color: rgb(205, 181, 181);
+}
+
+#history_button{
+  color:white;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: SourceSansPro-Regular, sans-serif;
+  font-weight: 500;
+  color: #424949;
+  background-color: #ECF0F1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  height: 38px;
+  margin: 60px 0;
+}
+h1 span {
+  white-space: nowrap;
+}
+
+.flex-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: all 1s ease-out;
+}
+
+.input-flex-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80vw;
+  height: 100px;
+  max-width: 1000px;
+  position: relative;
+  z-index: 0;
+  transition: all 1s ease-out;
+}
+
+.input {
+  width: 25px;
+  height: 25px;
+  background-color: rgba(36, 15, 15, 0.693);
+  position: relative;
+  border-radius: 50%;
+  transition: all 1s ease-out;
+}
+.input:hover {
+  cursor: pointer;
+}
+.input::before, .input::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(36, 15, 15, 0.693);
+  width: 4vw;
+  height: 5px;
+  max-width: 50px;
+}
+.input::before {
+  left: calc(-4vw + 12.5px);
+}
+.input::after {
+  right: calc(-4vw + 12.5px);
+}
+.input.active {
+  background-color: #dc3545;
+}
+.input.active::before {
+  background-color: rgba(36, 15, 15, 0.693);
+}
+.input.active::after {
+  background-color: rgba(36, 15, 15, 0.693);
+}
+.input.active span {
+  font-weight: 700;
+}
+.input.active span::before {
+  font-size: 20px;
+  top: -100px;
+}
+.input.active span::after {
+  font-size: 20px;
+}
+.input span {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+.input span::before, .input span::after {
+  visibility: visible;
+  position: absolute;
+  left: 50%;
+  
+}
+.input span::after {
+  content: attr(data-year);
+  top: 25px;
+  transform: translateX(-55%);
+  font-size: 16px;
+}
+.input span::before {
+  content: attr(data-info);
+  top: -85px;
+  width: 70px;
+  transform: translateX(-5px) rotateZ(-45deg);
+  font-size: 15px;
+  text-indent: -10px;
+}
+
+.description-flex-container {
+  width: 80vw;
+  font-weight: 400;
+  font-size: 22px;
+  margin-top: 100px;
+  max-width: 1000px;
+}
+.description-flex-container p {
+  margin-top: 0;
+  display: none;
+}
+.description-flex-container p.active {
+  display: block;
+}
+
+@media (min-width: 1250px) {
+  .input::before {
+    left: -37.5px;
+  }
+  .input::after {
+    right: -37.5px;
+  }
+}
+.flex-parent{
+  margin-top: 8%;
+  margin-bottom: 5%;
+}
+main{
+  margin-top: 2%;
+}
+
+.display-4{
+  color: #dc3545;
+}
+
+.container{
+  text-align: center;
+}
+
+
+
+
+

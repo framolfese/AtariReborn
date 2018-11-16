@@ -1,8 +1,8 @@
-$(function(){
+$(document).ready(function(){
     var clicked = false;
     var lastB = null;
-	var inputs = $('.input');
-	var paras = $('.description-flex-container').find('p');
+    var inputs = $('.input');
+    var paras = $('.description-flex-container').find('p');
 	$(inputs).click(function(){
         var t = $(this),
                 ind = t.index(),
@@ -13,10 +13,15 @@ $(function(){
             clicked = true;
             lastB = t;
         }
-        else if(clicked && lastB != t){
+        else if(clicked && !lastB.is(t)){
             $(t).add(matchedPara).addClass('active');
             $(inputs).not(t).add($(paras).not(matchedPara)).removeClass('active');
             lastB = t;
+        }
+        else{
+            $(t).add(matchedPara).removeClass('active');
+            lastB = t;
+            clicked = false;
         }
     });
 });

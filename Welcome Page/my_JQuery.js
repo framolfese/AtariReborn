@@ -1,5 +1,4 @@
 var clicked = false;
-
 $(document).ready(function(){
     $("#welcome_label").click(function(){
 

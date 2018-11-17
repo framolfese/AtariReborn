@@ -1,0 +1,15 @@
+Il gioco è debuggato in modo tale da rispettare le seguenti regole: 
+1°: Se vai Backward perdi, perché conta come mangiare se stessi.
+2°: Se sbatti su te stesso (ti mangi) perdi.
+3°: Se tocchi i bordi conta come morire quindi perdi.
+
+Ora, rimangono due cazzatelle da implementare:
+La prima è semplicemente modificare il file index.html che è in questa cartella in modo tale da rendere la pagina più carina
+(la vorrei con a sinistra il gioco e a destra le regole scritte per esteso con titolo "Snake's Rules")
+La seconda è che sotto alle regole
+ogni volta che muori stampa la lunghezza massima che lo snake ha raggiungo al momento della morte, la variabile da printare è this.total)
+
+Lo posso fare anche io con calma ma prima volevo sentire se ti andava bene e scegliere font ecc insieme
+
+See ya dude.
+

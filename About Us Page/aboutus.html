@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <div class="row mb-2">
+      <div name="1" class="row mb-2">
         <div class="col-md-6">
           <div class="card flex-md-row mb-4 shadow-sm h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
@@ -66,7 +66,7 @@
               World of Warcraft player (For the Alliance!).</p>
               <p><a href="https://www.facebook.com/francesco.molfese.98">Link al profilo Facebook</a><br>
               <a href="https://www.instagram.com/framolfese/">Link al profilo Instagram</a></p>
-              <a href="#" style="color: #dc3545">Continue reading</a>
+              <a class="continue_button" href="#1" style="color: #dc3545" data-target="#tabella_sinistra_profilo">Continue reading</a>
             </div>
             <img class="card-img-right flex-auto d-none d-lg-block" src="molfy.jpeg" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
           </div>
@@ -80,10 +80,12 @@
               </h3>
               <div class="mb-1 text-muted">Nov 13</div>
               <p class="card-text mb-auto">Computer Science student.<br>
-              Pussy Addicted.</p>
+              Pussy Addicted.
+              <br>Guitar player.
+              </p>
               <p><a href="https://www.facebook.com/marco.mormando">Link al profilo Facebook</a><br>
               <a href="https://www.instagram.com/mormandino/">Link al profilo Instagram</a></p>
-              <a href="#" style="color: #dc3545">Continue reading</a>
+              <a class="continue_button" href="#1" style="color: #dc3545" data-target="#tabella_destra_profilo">Continue reading</a>
             </div>
             <img class="card-img-right flex-auto d-none d-lg-block" src="mormy.jpeg"data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
           </div>
@@ -94,7 +96,7 @@
     <!--Inizio parte che si apre quando clicchi Continue Reading-->
     <div class="row">
       <div class="col">
-        <div id="tabella_sinistra_profilo" class="jumbotron jumbotron-fluid">
+        <div id="tabella_sinistra_profilo" class="jumbotron jumbotron-fluid mb-4 descrizioni">
           <div class="container">
             <h1 class="display-4">Fluid jumbotron</h1>
             <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
@@ -102,7 +104,7 @@
         </div>
       </div>
       <div class="col">
-        <div id="tabella_destra_profilo" class="jumbotron jumbotron-fluid">
+        <div id="tabella_destra_profilo" class="jumbotron jumbotron-fluid mb-4 descrizioni">
           <div class="container">
             <h1 class="display-4">Fluid jumbotron</h1>
             <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
@@ -113,7 +115,7 @@
     
     <!--Fine parte che si apre quando clicchi Continue Reading-->
 
-    <main role="main" class="container">
+    <main id="blog" role="main" class="container">
       <div class="row">
         <div class="col-md-8 blog-main">
           <div class="blog-post">
@@ -144,7 +146,7 @@
           </div>
         
         </aside><!-- /.blog-sidebar -->
-
+        <button id="reading_button" class="btn btn-outline-danger my-2 mr-sm-2">Active reading mode</button>
       </div><!-- /.row -->
 
     </main><!-- /.container -->
@@ -159,8 +161,9 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="../jquery-3.3.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="script_about.js"></script>
   </body>
 </html>

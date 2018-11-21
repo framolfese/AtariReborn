@@ -93,7 +93,7 @@ textarea {
 textarea:focus, input:focus {
   border-color: transparent !important;
 }
-
+/*
 input::-webkit-input-placeholder { color: #4b2354;}
 input:-moz-placeholder { color: #4b2354;}
 input::-moz-placeholder { color: #4b2354;}
@@ -102,10 +102,10 @@ input:-ms-input-placeholder { color: #4b2354;}
 textarea::-webkit-input-placeholder { color: #4b2354;}
 textarea:-moz-placeholder { color: #4b2354;}
 textarea::-moz-placeholder { color: #4b2354;}
-textarea:-ms-input-placeholder { color: #4b2354;}
+textarea:-ms-input-placeholder { color: #4b2354;}*/
 
 /*---------------------------------------------*/
-button {
+/*button {
 	outline: none !important;
 	border: none;
 	background: transparent;
@@ -113,7 +113,7 @@ button {
 
 button:hover {
 	cursor: pointer;
-}
+}*/
 
 iframe {
 	border: none !important;
@@ -123,7 +123,7 @@ iframe {
 
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
-.txt1 {
+/*.txt1 {
   font-family: SourceSansPro-Regular;
   font-size: 16px;
   line-height: 1.4;
@@ -140,7 +140,7 @@ iframe {
 .hov1:hover {
   color: #4b2354;
   text-decoration: underline;
-}
+}*/
 
 
 /*//////////////////////////////////////////////////////////////////
@@ -174,10 +174,10 @@ iframe {
   top: 0;
   left: 0;
   background: rgba(145, 18, 31, 0.5);
-  background: -webkit-linear-gradient(left, rgba(228, 22, 7, 0.5), rgba(145, 18, 31, 0.5));
-  background: -o-linear-gradient(left, rgba(228, 22, 7, 0.5), rgba(145, 18, 31, 0.5));
-  background: -moz-linear-gradient(left, rgba(228, 22, 7, 0.5), rgba(145, 18, 31, 0.5));
-  background: linear-gradient(left, rgba(228, 22, 7, 0.5), rgba(145, 18, 31, 0.5));
+  background: -webkit-linear-gradient(left, rgba(109, 98, 98, 0.5), rgba(58, 23, 27, 0.5));
+  background: -o-linear-gradient(left, rgba(109, 98, 98, 0.5), rgba(58, 23, 27, 0.5));
+  background: -moz-linear-gradient(left, rgba(109, 98, 98, 0.5), rgba(58, 23, 27, 0.5));
+  background: linear-gradient(left, rgba(109, 98, 98, 0.5), rgba(58, 23, 27, 0.5));
   pointer-events: none;
 }
 
@@ -222,7 +222,7 @@ iframe {
   background-color: #fff;
   border-radius: 20px;
 }
-
+/*
 .input100 {
   font-family: SourceSansPro-Bold;
   font-size: 16px;
@@ -234,7 +234,7 @@ iframe {
   height: 62px;
   background: transparent;
   padding: 0 20px 0 23px;
-}
+}*/
 
 
 /*------------------------------------------------------------------

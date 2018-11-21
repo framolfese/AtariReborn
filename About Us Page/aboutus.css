@@ -19,7 +19,6 @@
 }
 
 body, html, main {
-	height: 100%;
 	font-family: SourceSansPro-Regular, sans-serif;
 }
 
@@ -71,32 +70,6 @@ h1, h2, h3, h4, h5, h6 {
   .display-4 {
     font-size: 3rem;
   }
-}
-
-.nav-scroller {
-  position: relative;
-  z-index: 2;
-  height: 2.75rem;
-  overflow-y: hidden;
-}
-
-.nav-scroller .nav {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  padding-bottom: 1rem;
-  margin-top: -1px;
-  overflow-x: auto;
-  text-align: center;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-}
-
-.nav-scroller .nav-link {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  font-size: .875rem;
 }
 
 .card-img-right {
@@ -201,12 +174,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #tabella_sinistra_profilo{
-  margin-left: 23%;
+  margin-left: 17%;
   display: none;
 }
 
 #tabella_destra_profilo{
-  margin-right: 23%;
+  margin-right: 17%;
   display: none;
 }
 
@@ -214,4 +187,8 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-filter: blur(3px); /* Safari 6.0 - 9.0 */
   filter: blur(3px);
   background-color: #373535;
+}
+
+.container{
+  margin-bottom: 0;
 }

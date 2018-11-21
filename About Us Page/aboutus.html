@@ -16,36 +16,35 @@
   </head>
 
   <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul id="linked_list" class="navbar-nav mr-auto">
+            <li class='nav-item active'>
+                <label id='welcome_label' class='btn btn-outline-danger my-2 mr-sm-2'>ATARI REBORN</label> 
+            </li>
+            <li class="nav-item active">
+              <a id="home_button" class="btn my_button my-2 mr-sm-2" href="../Welcome Page/index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a id="history_button" class="btn my_button my-2 mr-sm-2" href="../Timeline Page/history.html">History <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a id="aboutus_button" class="btn my_button my-2 mr-sm-2" href="aboutus.html">About Us <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <a id="button_signin" class="btn btn-outline-danger my-2 mr-sm-2" href="../Sign Up Page/signup.html">Sign Up</a>
+            <a id="button_login" class="btn btn-outline-danger my-2 mr-sm-2" href="../Log In Page/loggedin.html">Log In</a>
+          </form>
+        </div>
+      </nav>
+    </header>
 
     <div class="container">
-      <header>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul id="linked_list" class="navbar-nav mr-auto">
-              <li class='nav-item active'>
-                  <label id='welcome_label' class='btn btn-outline-danger my-2 mr-sm-2'>ATARI REBORN</label> 
-              </li>
-              <li class="nav-item active">
-                <a id="home_button" class="btn my_button my-2 mr-sm-2" href="../Welcome Page/index.html">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a id="history_button" class="btn my_button my-2 mr-sm-2" href="#">History <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a id="aboutus_button" class="btn my_button my-2 mr-sm-2" href="#">About Us <span class="sr-only">(current)</span></a>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <a id="button_signin" class="btn btn-outline-danger my-2 mr-sm-2" href="../Sign Up Page/signup.html">Sign Up</a>
-              <a id="button_login" class="btn btn-outline-danger my-2 mr-sm-2" href="../Log In Page/loggedin.html">Log In</a>
-            </form>
-          </div>
-        </nav>
-      </header>
-
       <div id="serfone" class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
         <div id="scritta_del_serfone" class="col-md-6 px-0">
             <h1 class="display-4 font-italic">Where everything began (...on the sofa)</h1>
@@ -146,18 +145,10 @@
           </div>
         
         </aside><!-- /.blog-sidebar -->
-        <button id="reading_button" class="btn btn-outline-danger my-2 mr-sm-2">Active reading mode</button>
       </div><!-- /.row -->
 
     </main><!-- /.container -->
-
-    <footer class="blog-footer">
-      <p>© 2018-2019 <a href="../Welcome Page/index.html" style="color: #dc3545">M&M's, Inc.</a></p>
-      <p>
-        <a href="#" style="color: #dc3545">Back to top</a>
-      </p>
-    </footer>
-
+  </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -166,4 +157,10 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="script_about.js"></script>
   </body>
+   <footer class="blog-footer">
+      <p>© 2018-2019 <a href="../Welcome Page/index.html" style="color: #dc3545">M&M's, Inc.</a></p>
+      <p>
+        <a href="#" style="color: #dc3545">Back to top</a>
+      </p>
+  </footer>
 </html>

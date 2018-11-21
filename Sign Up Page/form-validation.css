@@ -42,7 +42,7 @@ body{
 
 /*bordi dei campi da riempire */
 
-#firstName, #lastName, #username, #email, #cc-name, #cc-number,  #cc-expiration, #cc-cvv{
+#firstName, #lastName, #username, #email, #cc-name, #cc-number,  #cc-expiration, #cc-cvv, #import{
   border-color: #dc3545;
 }
 
@@ -75,6 +75,6 @@ body{
   position: fixed;
   object-fit: cover;
   height: -webkit-fill-available;
-  -webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
-  filter: blur(2px);
+  -webkit-filter: blur(3.4px); /* Safari 6.0 - 9.0 */
+  filter: blur(3.4px);
 }

@@ -83,8 +83,8 @@ body, html {
   color: #dc3545;
   background-color: #eeeeee;
   position: absolute;
-  left: 108.45%;
-  top: 4.3%;
+  left: 107.5%;
+  top: 4%;
   z-index: 100;
 }
 
@@ -92,8 +92,8 @@ body, html {
   color: #dc3545;
   background-color: #eeeeee;
   position: absolute;
-  right: 108.45%;
-  top: 4.3%;
+  right: 107%;
+  top: 4%;
   z-index: 100;
 }
 
@@ -114,8 +114,11 @@ body, html {
   position: relative;
 }
 
+.timeline_elem{
+  height: 60rem;
+}
+
 .mytimeline > li > .mytimeline-panel {
-  margin-bottom: 22rem;
   width: 90%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -173,24 +176,14 @@ body, html {
 }
 
 .mytimeline > li > .mytimeline-panel-inverted {
-  margin-left: 9.75%;
   width: 90%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   position: relative;
+  margin-right: 0;
+  margin-left: auto;
   -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
-  margin-top: 22rem;
-}
-
-.sbarra{
-  top: 0;
-  bottom: 0;
-  position: absolute;
-  content: " ";
-  width: 4px;
-  background-color: #eeeeee;
-  left: 99.7%;
 }
 
 .row{
@@ -234,17 +227,31 @@ body, html {
   transition: all 1s ease-in;
 }
 
-.progress{
-  margin-right: 5rem;
-  margin-left: 5rem;
+
+.myprogress-bar{
+  height: 0%;
+  background-color: #dc3545;
+  transition: heigth 0.6s ease;
 }
 
-#openall_button{
-  width: 70%;
-  margin-top: 2rem;
-  margin-left: 15%; 
+.myprogress{
+  overflow: hidden;
+  background-color: #eeeeee;
+  border-radius: 0.35rem;
 }
 
-#statusbar{
-  width: 0;
+.col-laterale{
+  width: 49.5%;
+  position: relative;
+  min-height: 1px;
+}
+
+.col-centrale{
+  width: 1%;
+  position: relative;
+  min-height: 1px;
+}
+
+.coldx{
+  margin-top: 30rem;
 }

@@ -2,12 +2,14 @@ $(document).ready(function(){
 	var dates = $('.mydata');
 	var dates_inverted = $('.mydata-inverted');
 	var dates_array = new Array();
-	var inc = 100 / (dates.length + dates_inverted.length);
+	var col_dx = $(".coldx").find("li");
+	var col_sx = $(".colsx").find("li");
+	var last_schiacced = null;
 
 	function isInArray(value, array) {
 		var i = 0;
 		for(i; i<array.length; i++){
-			if(array[i].is(value)) return true;
+			if(array[i] === (value)) return true;
 		}
 		return false;
 	}
@@ -15,109 +17,132 @@ $(document).ready(function(){
 	function findIndex(value, array) {
 		var i = 0;
 		for(i; i<array.length; i++){
-			if(array[i].is(value)) return i;
+			if(array[i] === (value)) return i;
 		}
 		return -1;
 	}
 
+	function openAllSx(idx_elem){
+		var i = 0;
+		for(i; i<col_sx.length; i++){
+			if(i <= idx_elem){
+				var t = $(col_sx[i]).children().children()[1];
+				$(t).addClass('schiacciato');
+				$(t).parent().children().not(t).removeClass('withBlur');
+				$(t).next().fadeIn(1500);
+				dates_array.push(t);
+			}
+			else{
+				var t = $(col_sx[i]).children().children()[1];
+				$(t).removeClass('schiacciato');
+				$(t).parent().children().not(t).addClass('withBlur');
+				$(t).next().hide();
+				var idx = findIndex(t, dates_array);
+				if(idx > -1) dates_array.splice(idx, 1);
+			}
+		}
+		i = 0;
+		for(i; i<col_dx.length; i++){
+			if(i < idx_elem){
+				var t = $(col_dx[i]).children().children()[1];
+				$(t).addClass('schiacciato-inverted');
+				$(t).parent().children().not(t).removeClass('withBlur');
+				$(t).next().fadeIn(1500);
+				dates_array.push(t);
+			}
+			else{
+				var t = $(col_dx[i]).children().children()[1];
+				$(t).removeClass('schiacciato-inverted');
+				$(t).parent().children().not(t).addClass('withBlur');
+				$(t).next().hide();
+				var idx = findIndex(t, dates_array);
+				if(idx > -1) dates_array.splice(idx, 1);
+			}
+		}
+		last_schiacced = $(col_sx[idx_elem]).children().children()[1];
+	}
+
+	function openAllDx(idx_elem){
+		var i = 0;
+		for(i; i<col_sx.length; i++){
+			if(i <= idx_elem){
+				var t = $(col_sx[i]).children().children()[1];
+				$(t).addClass('schiacciato');
+				$(t).parent().children().not(t).removeClass('withBlur');
+				$(t).next().fadeIn(1500);
+				dates_array.push(t);
+			}
+			else{
+				var t = $(col_sx[i]).children().children()[1];
+				$(t).removeClass('schiacciato');
+				$(t).parent().children().not(t).addClass('withBlur');
+				$(t).next().hide();
+				var idx = findIndex(t, dates_array);
+				if(idx > -1) dates_array.splice(idx, 1);
+			}
+		}
+		i = 0;
+		for(i; i<col_dx.length; i++){
+			if(i <= idx_elem){
+				var t = $(col_dx[i]).children().children()[1];
+				$(t).addClass('schiacciato-inverted');
+				$(t).parent().children().not(t).removeClass('withBlur');
+				$(t).next().fadeIn(1500);
+				dates_array.push(t);
+			}
+			else{
+				var t = $(col_dx[i]).children().children()[1];
+				$(t).removeClass('schiacciato-inverted');
+				$(t).parent().children().not(t).addClass('withBlur');
+				$(t).next().hide();
+				var idx = findIndex(t, dates_array);
+				if(idx > -1) dates_array.splice(idx, 1);
+			}
+		}
+		last_schiacced = $(col_dx[idx_elem]).children().children()[1];
+	}
+
 	$(dates).on("click" ,(function(){
 		var t = $(this);
-		var cond = isInArray(t,dates_array);
-		var width_parent = $('#statusbar').parent().width();
-		if(!cond){
-			$(t).parent().css({"margin-bottom": "7rem"});
-			$(t).addClass('schiacciato');
-			$(t).parent().children().not(t).removeClass('withBlur');
-			$(t).next().fadeIn(1500);
-			$('#statusbar').css({"width": (($('#statusbar').width()/width_parent) * 100 + inc)  + "%"});
-			dates_array.push(t);
+		var elem_idx = $(this).parent().parent().index();
+		if(!t.is(last_schiacced)){
+			openAllSx(elem_idx);
+			$('#statusbar').css({"height": (30 + elem_idx * 60 + 2)  + "rem"});
 		}
 		else{
-			$(t).parent().css({"margin-bottom": "22rem"});
 			$(t).removeClass('schiacciato');
-			$(t).parent().children().not(t).not(t.next()).addClass('withBlur');
+			$(t).parent().children().not(t).addClass('withBlur');
 			$(t).next().hide();
-			$('#statusbar').css({"width": (($('#statusbar').width()/width_parent) * 100 - inc)  + "%"});
+			if(t.is($('#first_elem'))){
+				$('#statusbar').css({"height": 0 + "%"});
+				last_schiacced = null;
+			} 
+			else{
+				last_schiacced = $(col_dx[elem_idx - 1]).children().children()[1];
+				$('#statusbar').css({"height": ((elem_idx) * 60 + 2)  + "rem"});
+			} 
 			var idx = findIndex(t, dates_array);
 			if(idx > -1) dates_array.splice(idx, 1);
 		}
-		
 	}));
 
 	$(dates_inverted).on("click", (function(){
 		var t = $(this);
-		var cond = isInArray(t,dates_array);
-		var width_parent = $('#statusbar').parent().width();
-		if(!cond){
-			$(t).parent().css({"margin-top": "8.5rem"});
-			$(t).addClass('schiacciato-inverted');
-			$(t).parent().children().not(t).removeClass('withBlur');
-			$(t).next().fadeIn(1500);
-			$('#statusbar').css({"width": (($('#statusbar').width()/width_parent) * 100 + inc)  + "%"});
-			dates_array.push(t);
+		var elem_idx = $(this).parent().parent().index();
+		if(!t.is(last_schiacced)){
+			openAllDx(elem_idx);
+			if(t.is($('#last_elem'))) $('#statusbar').css({"height": 100 + "%"});
+			else $('#statusbar').css({"height": ((elem_idx+1) * 60 + 2)  + "rem"});
 		}
 		else{
-			$(t).parent().css({"margin-top": "22rem"});
+			console.log(last_schiacced);
 			$(t).removeClass('schiacciato-inverted');
-			$(t).parent().children().not(t).not(t.next()).addClass('withBlur');
+			$(t).parent().children().not(t).addClass('withBlur');
 			$(t).next().hide();
-			$('#statusbar').css({"width": (($('#statusbar').width()/width_parent) * 100 - inc)  + "%"});
+			$('#statusbar').css({"height": ((elem_idx+1) * 60 + 2 - 30)  + "rem"});
 			var idx = findIndex(t, dates_array);
 			if(idx > -1) dates_array.splice(idx, 1);
+			last_schiacced = $(col_sx[elem_idx]).children().children()[1];
 		}
 	}));
-
-	/*var clicked = false;
-	$('#openall_button').click(function(){
-		var toTrigger1 = new Array();
-		var toTrigger2 = new Array();
-		console.log(dates_array);
-		console.log(toTrigger1);
-		console.log(toTrigger2);
-		if(!clicked){
-			var i = 0;
-			for(i; i<dates.length; i++){
-				if(!isInArray(dates[i], dates_array)){
-					toTrigger1.push(dates[i]);
-				}
-			}
-			
-			var j = 0;
-			for(j; j<dates_inverted.length; j++){
-				if(isInArray(dates_inverted[j], dates_array)){
-					toTrigger2.push(dates_inverted[j]);
-				}
-			}
-
-			dates(toTrigger1).trigger("click");
-			console.log(toTrigger1);
-			toTrigger1.splice(0,toTrigger1.length);
-			dates_inverted(toTrigger2).trigger("click");
-			console.log(toTrigger2);
-			toTrigger2.splice(0,toTrigger2.length);
-
-			console.log(toTrigger1);
-			console.log(toTrigger2);
-			
-			$('#statusbar').css({"width": 100+"%"});
-			//clicked = true;
-		}/*
-		else{
-			for(i; i<toTrigger1.length; i++){
-				if(isInArray(toTrigger1[i], dates_array)){
-					toTrigger1.splice(i, 1);
-				}
-			}
-			var j = 0;
-			for(j; j<toTrigger2.length; j++){
-				if(isInArray(toTrigger2[j], dates_array)){
-					toTrigger2.splice(j, 1);
-				}
-			}
-			$(toTrigger1).trigger("click");
-			$(toTrigger2).trigger("click");
-			$('#statusbar').css({"width": 0+"%"});
-			clicked = false;
-		}
-	});*/
 });

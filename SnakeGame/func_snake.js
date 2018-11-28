@@ -11,7 +11,7 @@ var canvas;
 
 function setup() {
 	if(!gameover){
-		canvas = createCanvas(scl*45, scl*33);
+		canvas = createCanvas(scl*48, scl*42);
 		canvas.parent('canvas-holder');
 		s = new Snake();
 		frameRate(10);
@@ -68,11 +68,11 @@ function draw() {
 		}*/
 	}
 	else if(gameover){
-		canvas = createCanvas(scl*45, scl*33);
+		canvas = createCanvas(scl*48, scl*42);
 		canvas.parent('canvas-holder');
 		background(0);
 		messaggiofine = createElement('h2', 'GAME OVER');
-		messaggiofine.position(windowWidth/4,windowHeight/3);
+		messaggiofine.position(windowWidth/9 * 2,windowHeight/2 - 80);
 		messaggiofine.style('font-size', '50px');
 		messaggiofine.style('color', '#dc3545');
 		noLoop();

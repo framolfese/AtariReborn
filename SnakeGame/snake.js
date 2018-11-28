@@ -14,7 +14,7 @@ function Snake() {
 
 	this.eat = function(pos) {
 		var d = dist(this.x , this.y, pos.x, pos.y);
-		if(d < 1) {
+		if(d < scl) {
 			this.total++;
 			return true;
 		}
@@ -23,13 +23,37 @@ function Snake() {
 		}
 	}
 
+	/*this.hit = function(pos1, pos2, pos3, pos4){
+		var d1 = dist(this.x , this.y, pos1.x, pos1.y);
+		var d2 = dist(this.x , this.y, pos2.x, pos2.y);
+		var d3 = dist(this.x , this.y, pos3.x, pos3.y);
+		var d4 = dist(this.x , this.y, pos4.x, pos4.y);
+		if((d1 < 1) || (d2 < 1) || (d3 < 1) || (d4 < 1)) {
+			return true;
+		}
+		else{
+			return false;
+		}
+	}*/
+	this.hitEdge = function() {
+		if(this.x + scl > width)
+			this.x = 0;
+		else if(this.x < 0)
+			this.x = width;
+		else if(this.y + scl > height)
+			this.y = 0;
+		else if(this.y < 0)
+			this.y = height;
+	}
+
 	this.death = function() {
 		for(var i = 0; i < this.tail.length; i++) {
 			var pos = this.tail[i];
 			var d = dist(this.x, this.y, pos.x, pos.y);
-			if(d < 1) {
+			if(d < 1){
 				this.total = 0;
 				this.tail = [];
+				return true;
 			}
 		}
 	}
@@ -44,11 +68,6 @@ function Snake() {
 
 		this.x = this.x + this.xspeed*scl;
 		this.y = this.y + this.yspeed*scl;
-
-		this.x = constrain(this.x, 0, width-scl);
-		this.y = constrain(this.y, 0, height-scl);
-
-
 	}
 
 	this.show = function() {

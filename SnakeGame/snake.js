@@ -23,18 +23,6 @@ function Snake() {
 		}
 	}
 
-	/*this.hit = function(pos1, pos2, pos3, pos4){
-		var d1 = dist(this.x , this.y, pos1.x, pos1.y);
-		var d2 = dist(this.x , this.y, pos2.x, pos2.y);
-		var d3 = dist(this.x , this.y, pos3.x, pos3.y);
-		var d4 = dist(this.x , this.y, pos4.x, pos4.y);
-		if((d1 < 1) || (d2 < 1) || (d3 < 1) || (d4 < 1)) {
-			return true;
-		}
-		else{
-			return false;
-		}
-	}*/
 	this.hitEdge = function() {
 		if(this.x + scl > width)
 			this.x = 0;
@@ -44,6 +32,21 @@ function Snake() {
 			this.y = 0;
 		else if(this.y < 0)
 			this.y = height;
+	}
+
+	this.hit = function(obstacles){
+		for(var i = 0; i < 10; i++){
+			var pos = obstacles[i];
+			var d1 = dist(this.x, this.y, pos.x, pos.y);
+			var d2 = dist(this.x, this.y, pos.x+20, pos.y);
+			var d3 = dist(this.x, this.y, pos.x, pos.y+20);
+			var d4 = dist(this.x, this.y, pos.x+20, pos.y+20);
+			if(d1 < 1 || d2 < 1 || d3 < 1 || d4 < 1){
+				this.total = 0;
+				this.tail = [];
+				return true;
+			}
+		}
 	}
 
 	this.death = function() {

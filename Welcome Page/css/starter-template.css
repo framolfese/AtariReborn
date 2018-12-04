@@ -1,0 +1,126 @@
+@font-face {
+  font-family: SourceSansPro-Regular;
+  src: url('../fonts/source-sans-pro/SourceSansPro-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: SourceSansPro-Bold;
+  src: url('../fonts/source-sans-pro/SourceSansPro-Bold.ttf'); 
+}
+
+@font-face {
+  font-family: SourceSansPro-SemiBold;
+  src: url('../fonts/source-sans-pro/SourceSansPro-SemiBold.ttf'); 
+}
+
+@font-face {
+  font-family: JosefinSans-Bold;
+  src: url('../fonts/JosefinSans/JosefinSans-Bold.ttf'); 
+}
+
+body, html {
+	font-family: SourceSansPro-Regular, sans-serif;
+}
+
+.starter-template {
+  padding: 1.2rem;
+  text-align: center;
+}
+
+#subtitle{
+  font-weight: 467;
+}
+
+#welcome_label{
+  color: red;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+  cursor: pointer;
+}
+
+.my_button{
+  color: #dc3545;
+  background-color: transparent;
+  background-image: none;
+}
+
+.my_button:hover {
+  color: rgb(205, 181, 181);
+}
+
+#home_button{
+  color:white;
+}
+
+hr{
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  background-color: #dc3545;
+}
+
+#firstline{
+  margin-top: 5%;
+  margin-left: 8%;
+  margin-right: 8%;
+  display:none;
+}
+
+.classWithShadow{
+  -moz-box-shadow: 3px 3px 4px rgb(26, 25, 25); 
+  -webkit-box-shadow: 3px 3px 4px rgb(26, 25, 25); 
+  box-shadow: 3px 3px 4px rgb(26, 25, 25); 
+}
+
+.img{
+  border-radius: 20px;
+  -moz-border-radius: 20px; /* firefox */
+  -webkit-border-radius: 20px; /* safari, chrome */
+} 
+
+.withBlur{
+  -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+  filter: blur(5px);
+  transition: .5s ease;
+}
+
+.overlay {
+  position: absolute; 
+  top: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  display:none;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.jumbotron{
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 4%;
+  border-radius: 20px;
+  height: 400px;
+  display: none;
+}
+#daspostare{
+  margin-left: 10px;
+}
+
+h3{
+  color: white;
+}
+
+.privacyandterms{
+  cursor: pointer;
+}
+
+
+
+

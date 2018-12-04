@@ -1,0 +1,54 @@
+.mymodal-dialog{
+    padding: 0;
+}
+
+.mymodal-body{
+    margin-left: 0;
+}
+
+#canvas-holder{
+    float: left;
+    text-align: center;
+}
+
+#col-dx{
+    width: 300px;
+    float: right;
+    overflow: scroll;
+}
+
+.p5canvas{
+    border-radius: 20px;
+}
+
+.footer-table{
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #212529;
+    border-color: #32383e;
+}
+
+.btn-table{
+    width: 120px;
+}
+
+
+.img-table{
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.table{
+    margin-bottom: 0;
+}
+
+@media (min-width: 992px) {
+    .modal-lg {
+      max-width: 1200px;
+    }
+  }

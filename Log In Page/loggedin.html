@@ -1,29 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Atari Reborn Log In</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
+
+	<!--Linko CSS-->
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
 	
 </head>
 <body>
@@ -56,26 +42,30 @@
 	</header>
 	
 	<div class="container-login100">
-		<img id="imgmain" src="Retro-Arcade45.jpg">
-		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-			<form id="loginpanel" class="login100-form validate-form" action="../Play Page/play.html">
-				<span class="login100-form-title p-b-37">
+		<img id="imgmain" src="images/Retro-Arcade45.jpg">
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-50 p-b-50">
+			<span class="login100-form-title p-b-35 ">
 					Log In
-				</span>
-
-				<div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">
-						<label for="inputEmail" class="sr-only">Nickname or Email</label>
-						<input type="email" id="inputEmail" class="form-control" placeholder="Nickname or Email" required autofocus>
+			</span>
+			<form id="loginpanel" class="login100-form validate-form">
+				<label class="labels_login mail"></label>
+				<div class="wrap-input100 validate-input sizeDivButton" data-validate="Enter email">
+					<input name="mail" id="inputEmail" class="form-control" placeholder="Email" value="" autofocus>
+					<label class="invalid">
+							Valid email address is required
+					</label>
 				</div>
-
-				<div class="wrap-input100 validate-input m-b-25" data-validate = "Enter password">
-						<label for="inputPassword" class="sr-only">Password</label>
-						<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+				
+				<label class="labels_login pass"></label>
+				<div class="wrap-input100 validate-input sizeDivButton" data-validate = "Enter password">
+					<input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" value="" >
+					<label class="invalid">
+							Valid password is required (min 8 char)
+					</label>
 				</div>
-
 				<div class="checkbox mb-3">
 					<label>
-						<input type="checkbox" value="remember-me"> Remember me
+						<input id="showpassword_button" type="checkbox" value="show-password"> Show Password
 					</label>
 				</div>
 
@@ -85,39 +75,20 @@
 
 				<div class="text-center p-t-57 p-b-20">
 					<span class="txt1">
-						Or login with
+						If you haven't already, 
 					</span>
-				</div>
-
-				<div class="flex-c p-b-112">
-					<a href="#" class="login100-social-item">
-						<i class="fa fa-facebook-f"></i>
-					</a>
-
-					<a href="#" class="login100-social-item">
-						<img src="images/icons/icon-google.png" alt="GOOGLE">
+					<a href="../Sign Up Page/signup.html" class="txt1 red">
+						Sign Up
 					</a>
 				</div>
 			</form>	
 		</div>
 	</div>
 	
-<!--===============================================================================================-->
-	<script src="../jquery-3.3.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="sketch.js"></script>
-	<script src="js/main.js"></script>
-	
-
+	<!--Linko JS-->
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="js/sketch.js"></script>
+	<script src="js/validateform.js"></script>
 </body>
 </html>

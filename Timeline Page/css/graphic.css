@@ -1,0 +1,257 @@
+@font-face {
+  font-family: SourceSansPro-Regular;
+  src: url('../fonts/source-sans-pro/SourceSansPro-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: SourceSansPro-Bold;
+  src: url('../fonts/source-sans-pro/SourceSansPro-Bold.ttf'); 
+}
+
+@font-face {
+  font-family: SourceSansPro-SemiBold;
+  src: url('../fonts/source-sans-pro/SourceSansPro-SemiBold.ttf'); 
+}
+
+@font-face {
+  font-family: JosefinSans-Bold;
+  src: url('../fonts/JosefinSans/JosefinSans-Bold.ttf'); 
+}
+
+body, html {
+	font-family: SourceSansPro-Regular, sans-serif;
+}
+
+#welcome_label{
+  color: red;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+  cursor: pointer;
+}
+
+.my_button{
+  color: #dc3545;
+  background-color: transparent;
+  background-image: none;
+}
+
+.my_button:hover {
+  color: rgb(205, 181, 181);
+}
+
+#history_button{
+  color:white;
+}
+
+.timeline-title {
+  margin-top: 0;
+  color: inherit;
+}
+.timeline-body > p,
+.timeline-body > ul {
+    padding:20px;
+    margin-bottom: 0;
+}
+.timeline-body > p + p {
+  margin-top: 5px;
+}
+.timeline-footer{
+    padding:20px;
+    background-color:#f4f4f4;
+}
+.timeline-footer > a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.jumbotron{
+  margin-top: 5%;
+  text-align: center;
+}
+
+.text-red{
+  color: #dc3545;
+}
+
+.img-responsive {
+  display: block;
+  width: 100%;
+  height: 300px;
+}
+
+.mydata{
+  color: #dc3545;
+  background-color: #eeeeee;
+  position: absolute;
+  left: 107%;
+  top: 4%;
+  z-index: 100;
+}
+
+.mydata-inverted{
+  color: #dc3545;
+  background-color: #eeeeee;
+  position: absolute;
+  right: 107%;
+  top: 4%;
+  z-index: 100;
+}
+
+.mydata:hover, .mydata-inverted:hover {
+  color: white !important;
+  background-color: #dc3545;
+}
+
+.mycontainer{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.mytimeline{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.timeline_elem{
+  height: 60rem;
+}
+
+.mytimeline > li > .mytimeline-panel {
+  width: 90%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: relative;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+
+.trianglebefore {
+  position: absolute;
+  top: 15px;
+  right: -15px;
+  display: inline-block;
+  border-top: 15px solid transparent;
+  border-left: 15px solid rgb(21, 13, 13);
+  border-right: 0 solid rgb(21, 13, 13);
+  border-bottom: 15px solid transparent;
+  content: " ";
+}
+
+.triangleafter {
+  position: absolute;
+  top: 16px;
+  right: -14px;
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-left: 14px solid #fff;
+  border-right: 0 solid #fff;
+  border-bottom: 14px solid transparent;
+  content: " ";
+}
+
+.trianglebefore-inverted {
+  position: absolute;
+  top: 15px;
+  left: -15px;
+  display: inline-block;
+  border-top: 15px solid transparent;
+  border-left: 0 solid rgb(21, 13, 13);
+  border-right: 15px solid rgb(21, 13, 13);
+  border-bottom: 15px solid transparent;
+  content: " ";
+}
+
+.triangleafter-inverted {
+  position: absolute;
+  top: 16px;
+  left: -14px;
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-left: 0 solid #fff;
+  border-right: 14px solid #fff;
+  border-bottom: 14px solid transparent;
+  content: " ";
+}
+
+.mytimeline > li > .mytimeline-panel-inverted {
+  width: 90%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: relative;
+  margin-right: 0;
+  margin-left: auto;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+
+.row{
+  margin-top: 7%;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 7%;
+}
+
+.blog-footer {
+  padding: 2.5rem 0;
+  color: #999;
+  text-align: center;
+  background-color: #e9ecef;
+  border-top: .05rem solid #e5e5e5;
+}
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
+
+.withBlur{
+  -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+  filter: blur(5px);
+}
+
+.timeline-heading{
+  display: none;
+}
+
+.schiacciato{
+  background-color: #dc3545;
+  color: #eeeeee;
+  top: 2%;
+  transition: all 1s ease-in;
+}
+
+.schiacciato-inverted{
+  background-color: #dc3545;
+  color: #eeeeee;
+  top: 2%;
+  transition: all 1s ease-in;
+}
+
+
+.myprogress-bar{
+  height: 0%;
+  background-color: #dc3545;
+  transition: heigth 0.6s ease;
+}
+
+.myprogress{
+  overflow: hidden;
+  background-color: #eeeeee;
+  border-radius: 0.35rem;
+}
+
+.col-laterale{
+  width: 49.5%;
+  position: relative;
+  min-height: 1px;
+}
+
+.col-centrale{
+  width: 1%;
+  position: relative;
+  min-height: 1px;
+}
+
+.coldx{
+  margin-top: 30rem;
+}

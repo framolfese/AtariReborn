@@ -42,7 +42,6 @@ body, html {
 /*---------------------------------------------*/
 a {
 	font-family: SourceSansPro-Regular;
-	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
 	margin: 0px;
@@ -188,6 +187,7 @@ iframe {
   background: #fff;
   border-radius: 15px;
   overflow: hidden;
+  height: 32rem;
 
   box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
@@ -208,8 +208,8 @@ iframe {
   display: block;
   font-family: SourceSansPro-Bold;
   font-size: 30px;
-  color: #931111;
-  line-height: 1.2;
+  color: #dc3545;
+  line-height: 1;
   text-align: center;
 }
 
@@ -514,4 +514,25 @@ iframe {
 body{
   background-color: #dc3545;
 }
+
+.red:hover{
+  color: #dc3545;
+}
+
+.labels_login{
+  color: #dc3545;
+  display: none;
+}
+
+.invalid{
+  display: none;
+  font-size: 80%;
+  color: #dc3545;
+}
+
+.sizeDivButton{
+  height: 65px;
+}
+
+
 

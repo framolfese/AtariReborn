@@ -1,0 +1,170 @@
+/* @extend display-flex; */
+display-flex, .signup-content, .form-row, .form-radio, .select-icon, .select-icon i {
+  display: flex;
+  display: -webkit-flex; 
+}
+
+.signup-content{
+  padding-top: 60px;
+}
+
+@font-face {
+  font-family: SourceSansPro-Regular;
+  src: url('../fonts/source-sans-pro/SourceSansPro-Regular.ttf'); 
+}
+  
+@font-face {
+  font-family: SourceSansPro-Bold;
+  src: url('../fonts/source-sans-pro/SourceSansPro-Bold.ttf'); 
+}
+  
+@font-face {
+  font-family: SourceSansPro-SemiBold;
+  src: url('../fonts/source-sans-pro/SourceSansPro-SemiBold.ttf'); 
+}
+  
+@font-face {
+  font-family: JosefinSans-Bold;
+  src: url('../fonts/JosefinSans/JosefinSans-Bold.ttf'); 
+}
+
+body, html {
+  font-family: SourceSansPro-Regular, sans-serif;
+  background-color: rgb(133, 200, 200);
+}
+
+img {
+  max-width: 100%;
+  height: auto; 
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0 30px transparent inset;
+  -moz-box-shadow: 0 0 0 30px transparent inset;
+  -webkit-box-shadow: 0 0 0 30px transparent inset;
+  -o-box-shadow: 0 0 0 30px transparent inset;
+  -ms-box-shadow: 0 0 0 30px transparent inset; 
+}
+
+h2 {
+  line-height: 1.66;
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+  font-weight: bold;
+  color: #dc3545;
+  font-size: 28px;
+  text-transform: uppercase;
+  margin-bottom: 20px; 
+}
+
+body {
+  font-weight: 400;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+  background: #fff; 
+}
+
+.signup-img, .signup-form {
+  width: 50%;
+}
+
+.signup-form{
+  background-color: rgb(133, 200, 200);
+  margin-top: 7%;
+  margin-bottom: 7%;
+  margin-right: 4%;
+  margin-left: 2%;
+}
+
+.register-form {
+  padding-left: 70px;
+  padding-right: 70px;
+  background-color: #fff; 
+  border-radius: 20px;
+}
+
+.form-row {
+  margin: 0 -15px; 
+}
+
+.form-row .form-group {
+  width: 50%;
+  padding: 0 15px; 
+}
+
+.form-group {
+  margin-bottom: 15px;
+  position: relative; 
+}
+
+label {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 2px;
+  display: block; 
+}
+
+.form-submit {
+  text-align: center;
+  padding-top: 23px; 
+  padding-bottom: 20px;
+}
+
+#button_signin{
+  color: #f8f9fa;
+  background-color: #dc3545;
+}
+
+#welcome_label{
+  color: red;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+  cursor: pointer;
+}
+
+.my_button{
+  color: #dc3545;
+  background-color: transparent;
+  background-image: none;
+}
+
+.my_button:hover {
+  color: rgb(205, 181, 181);
+}
+
+.invalid{
+  display: none;
+  font-size: 80%;
+  color: #dc3545;
+}
+
+.form-control{
+  border-color: #dc3545;
+}
+
+#h_donation{
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 30px;
+  color: #dc3545;
+}
+
+.sizeDivButton{
+  height: 73px;
+}
+
+#sfondo{
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.modal-footer{
+  padding-top: 0;
+  padding-bottom: 0;
+}

@@ -1,21 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    
-    <title>Atari Reborn Registration</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atari Reborn Sign Up</title>
 
-    <!-- Bootstrap core CSS -->
+    <!--Linko CSS-->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-    <!-- Custom styles for this template -->
-    <link href="form-validation.css" rel="stylesheet">
-  </head>
-
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
      <span class="navbar-toggler-icon"></span>
     </button>
@@ -40,139 +37,135 @@
       </form>
     </div>
   </nav>
+</header>
 
-  <body class="mb-5">
-    <img id="sfondo" src="sfondo-main.png">
-    <div class="container">
-
-          <div class="col-md-12 order-md-1">
-            <h4 class="mb-3">Registration</h4>
-            <form class="needs-validation" novalidate>
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="firstName">First name</label>
-                  <input type="text" class="form-control" id="firstName" placeholder="First Name" value="" required>
-                  <div class="invalid-feedback">
-                    Valid first name is required.
-                  </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="lastName">Last name</label>
-                  <input type="text" class="form-control" id="lastName" placeholder="Last Name" value="" required>
-                  <div class="invalid-feedback">
-                    Valid last name is required.
-                  </div>
-                </div>
-              </div>
-  
-              <div class="mb-3">
-                <label for="username">Nickname</label>
-                <div class="input-group">
-                  <input type="text" class="form-control" id="username" placeholder="Nickname" required>
-                  <div class="invalid-feedback" style="width: 100%;">
-                    Your username is required.
-                  </div>
-                </div>
-              </div>
-  
-              <div class="mb-3">
-                <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                <input type="email" class="form-control" id="email" placeholder="you@example.com">
-                <div class="invalid-feedback">
-                  Please enter a valid email address for shipping updates.
-                </div>
-              </div>
-  
-              <h4 class="mb-3">Donation (By the holy light!)</h4>
-              <p> indeed, justice demands "retribution" ;)</p>
-  
-              <div class="d-block my-3">
-                <div class="custom-control custom-radio">
-                  <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                  <label class="custom-control-label" for="credit">Credit card</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                  <label class="custom-control-label" for="debit">Debit card</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                  <label class="custom-control-label" for="paypal">PayPal</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="cc-name">Name on card</label>
-                  <input type="text" class="form-control" id="cc-name" placeholder="Name on card" required>
-                  <small class="text-muted">Full name as displayed on card</small>
-                  <div class="invalid-feedback">
-                    Name on card is required
-                  </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="cc-number">Credit card number</label>
-                  <input type="text" class="form-control" id="cc-number" placeholder="CC number" required>
-                  <div class="invalid-feedback">
-                    Credit card number is required
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3 mb-3">
-                    <label for="import">Import</label>
-                    <input type="text" class="form-control" id="import" placeholder="How much?" required>
-                    <div class="invalid-feedback">
-                      Import must be specified
+<body>
+    <div class="signup-content">
+        <div class="signup-img">
+            <img id="sfondo" src="images/CPE9.gif">
+        </div>
+        <div class="signup-form">
+            <form class="register-form" id="register-form">
+                <h2>ATARI REBORN REGISTRATION</h2>
+                <div class="form-row">
+                    <div class="form-group sizeDivButton">
+                        <label for="name">First Name :</label>
+                        <input class="form-control obb" type="text" name="first_name" id="first_name" placeholder="Ex. Marco"/>
+                        <div class="invalid">
+                            Valid first name is required.
+                        </div>
                     </div>
-                  </div>
-                <div class="col-md-3 mb-3">
-                  <label for="cc-expiration">Expiration</label>
-                  <input type="text" class="form-control" id="cc-expiration" placeholder="Expire Date" required>
-                  <div class="invalid-feedback">
-                    Expiration date required
-                  </div>
+                    <div class="form-group sizeDivButton">
+                        <label for="father_name">Last Name :</label>
+                        <input class="form-control obb" type="text" name="last_name" id="last_name" placeholder="Ex. Rossi"/>
+                        <div class="invalid">
+                            Valid last name is required.
+                        </div>
+                    </div>           
                 </div>
-                <div class="col-md-3 mb-3">
-                  <label for="cc-cvv">CVV</label>
-                  <input type="text" class="form-control" id="cc-cvv" placeholder="Look behind your card" required>
-                  <div class="invalid-feedback">
-                    Security code required
-                  </div>
+                <div class="form-group sizeDivButton">
+                    <label for="address">Mail address :</label>
+                    <input class="form-control obb" type="text" name="mail" id="mail" placeholder="Ex. you@example.com"/>
+                    <div class="invalid">
+                        Valid mail address is required.
+                    </div>
                 </div>
-              </div>
-              <hr class="mb-4">
-              <button class="btn btn-outline-danger btn-lg btn-block" type="submit">Submit</button>
+                <div class="form-group sizeDivButton">
+                    <label for="address">Confirm Mail address :</label>
+                    <input class="form-control obb" type="text" name="confirm_mail" id="confirm_mail" placeholder="Like before"/>
+                    <div class="invalid">
+                        Must be the same and not empty.
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group sizeDivButton">
+                        <label for="state">Password :</label>
+                        <input class="form-control obb" type="password" name="password" id="password" placeholder="Min 8 characters"/>
+                        <div class="invalid">
+                            Valid password is required.
+                        </div>
+                    </div>
+                    <div class="form-group sizeDivButton">
+                        <label for="state">Confirm Password :</label>
+                        <input class="form-control obb" type="password" name="confirm_password" id="confirm_password" placeholder="Like before"/>
+                        <div class="invalid">
+                                Must be the same and not empty.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <h5 id="h_donation">DONATION? YOU KNOW, WE'RE STUDENTS...</h6>
+                </div>
+                <div class="form-row">
+                    <div class="form-group sizeDivButton">
+                        <label for="birth_date">Name On Card :</label>
+                        <input class="form-control" name="name_on_card" id="name_on_card" placeholder="Complete name on the card">
+                        <div class="invalid">
+                            Valid name is required.
+                        </div>
+                    </div>
+                    <div class="form-group sizeDivButton">
+                        <label for="pincode">Credit Card Number :</label>
+                        <input class="form-control" name="cc_number" id="cc_number" placeholder="16 numbers">
+                        <div class="invalid">
+                            Valid credit card is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group sizeDivButton">
+                        <label for="course">Import:</label>
+                        <input class="form-control" name="import" id="import" placeholder="Ex. 300.56 (euro)">
+                        <div class="invalid">
+                            Do not joke.
+                        </div>
+                    </div>
+                    <div class="form-group sizeDivButton">
+                        <label for="email">Expiration :</label>
+                        <input class="form-control" name="expiration" id="expiration" placeholder="MM/AA"/>
+                        <div class="invalid">
+                            Valid date is required.
+                        </div>
+                    </div>
+                    <div class="form-group sizeDivButton">
+                        <label for="email">CVV :</label>
+                        <input class="form-control" name="cvv" id="cvv" placeholder="Look behind your card"/>
+                        <div class="invalid">
+                            Valid CVV is required.
+                        </div>
+                    </div>
+                </div>
+                    <div class="form-submit ">
+                        <button class="btn btn-outline-danger my-2 mr-sm-2">Reset All</button>
+                        <button class="btn btn-outline-danger my-2 mr-sm-2" type="submit">Submit</button>
+                    </div>
+                </div>
             </form>
+        </div>
+    </div>
+    <div class="modal fade" id="modalSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Congratulations!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              'You have just joined our family!
+            </div>
+            <div class="modal-footer">
+            <button id="button_login_now" class="btn btn-outline-danger my-2 mr-sm-2" >Log In Now</button>
+            <button id="button_login_later" class="btn btn-outline-danger my-2 mr-sm-2" >Or Later</button>
+            </div>
           </div>
-      </div>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script>
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-      (function() {
-        'use strict';
-
-        window.addEventListener('load', function() {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.getElementsByClassName('needs-validation');
-
-          // Loop over them and prevent submission
-          var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
-        }, false);
-      })();
-    </script>
-  </body>
+        </div>
+    </div>
+</body>
+ <!--Linko JS-->
+ <script src="../js/jquery-3.3.1.min.js"></script>
+ <script src="../js/bootstrap.min.js"></script>
+ <script src="js/validaform.js"></script>
+ <script src="js/script.js"></script>
 </html>

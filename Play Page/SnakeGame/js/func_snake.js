@@ -44,9 +44,26 @@ function pickLocation() {
 
 	for(var i = 0; i < 10; i++){
 		squares[i].pickLocation();
-		toccato(squares[i]);
+	}
+
+	for(var i = 0; i < 10; i++){
+		var d1 = dist(squares[i].x, squares[i].y, s.x, s.y)
+		var d2 = dist(squares[i].x, squares[i].y, food.x, food.y)
+		if(d1 < scl*2 || d2 < scl*2){
+			squares[i].pickLocation();
+		}
 	}
 	
+	for(var i = 0; i < 10; i++){
+		for(var j = 0; j < 10; j++){
+			if(squares[i] != squares[j]){
+				var d = dist(squares[i].x, squares[i].y, squares[j].x, squares[j].y)
+				if(d < scl*3){
+					squares[i].pickLocation();
+				}
+			}
+		}
+	}
 }
 
 function start_snake(){
@@ -122,13 +139,14 @@ function draw() {
 		
 		fill(255, 0, 100);
 		rect(food.x, food.y, scl, scl);
+
 	}
 	else if(gameover){
 		canvas = createCanvas(scl*42, scl*37);
 		canvas.parent('canvas-holder');
 		background(0);
 		if(played){
-			/*invia dati a server per classifica*/
+			//invia dati a server per classifica
 			sendValuesToServer();
 			played = false;
 			console.log("ho fatto played");
@@ -155,12 +173,4 @@ function keyPressed() {
 	}
 }
 
-function toccato(obstacle){
-		if(obstacle.x === s.x || obstacle.y === s.y){
-			obstacle.pickLocation();
-		}
-		else if(obstacle.x === food.x || obstacle.y === food.y){
-			obstacle.pickLocation();
-		}
-		
-}
+

@@ -18,7 +18,7 @@ function Target(x, y) {
 
 	this.shiftDown = function() {
 		this.xdir *= -1;
-		this.y += this.r;
+		this.y += this.r*2+10;
 	}
 
 	this.move = function() {

@@ -1,12 +1,12 @@
 //file relativo al bersaglio
 
-function Target(x, y) {
+function Target(x, y, xdir) {
 	this.x = x;
 	this.y = y;
 	this.r = 30;
 	this.toDelete = false;
 
-	this.xdir = 1;
+	this.xdir = xdir;
 
 	this.grow = function() {
 		this.r = this.r + 2;
@@ -30,6 +30,5 @@ function Target(x, y) {
 		fill(255, 0, 200);
 		ellipse(this.x, this.y, this.r*2, this.r*2);
 	}
-
 
 }

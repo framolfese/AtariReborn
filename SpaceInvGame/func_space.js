@@ -5,13 +5,15 @@ var drops = [];
 var canvas;
 var gameover = false;
 var targets_killed = 0;
+var target_da_uccidere = 6;
+var speed = 1;
 
 function setup() {
 	canvas = createCanvas(20*48, 20*42);
 	canvas.parent('canvas-holder');
 	ship = new Ship();
-	for(var i = 0; i < 6; i++){
-		targets[i] = new Target(i*80+80, 60);
+	for(var i = 0; i < target_da_uccidere; i++){
+		targets[i] = new Target(i*80+80, 60, speed);
 	}
 }
 
@@ -22,6 +24,7 @@ function draw() {
 		ship.show();
 		ship.move();
 		ship.hitEdge();
+		
 		/*if(keyIsDown(ENTER)){
 			var drop = new Drop(ship.x, height);
 			drops.push(drop);
@@ -35,12 +38,22 @@ function draw() {
 					if(targets[j].r === 40){
 						targets[j].evaporate();
 						targets_killed++;
-						/*if(targets_killed%6 == 0){
-							for(var k = 0; k < targets.length; k++)
-								targets[k].xdir += 1;
-						}*/
 					}
 					drops[i].evaporate();
+				}
+			}
+		}
+
+		if(targets_killed == target_da_uccidere){
+			targets_killed = 0;
+			target_da_uccidere += 6;
+			speed += 0.2;
+			for(var i = 0; i < target_da_uccidere / 6; i++){
+				for(var j = 0; j < 6; j++){
+					if(i%2 == 0){
+						targets[6*i + j] = new Target(j*80+80, i*60+60, speed);
+					}
+					else targets[6*i + j] = new Target(width - j*80+80, i*60+60, -speed);
 				}
 			}
 		}
@@ -59,11 +72,7 @@ function draw() {
 			for(var i = 0; i < targets.length; i++){
 				targets[i].shiftDown();
 			}
-			var t = [];
-			for(var i = 0; i < 6; i++){
-				t[i] = new Target(i*80+80, 60);
-			}
-			targets = concat(targets, t);
+			
 		}
 	
 		for(var i = targets.length-1; i >= 0; i--){

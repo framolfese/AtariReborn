@@ -172,5 +172,9 @@ h3{
   transition: all 1.5s ease;
 }
 
+.privacyandterms{
+  cursor: pointer;
+}
+
 
 

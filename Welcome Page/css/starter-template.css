@@ -22,6 +22,10 @@ body, html {
 	font-family: SourceSansPro-Regular, sans-serif;
 }
 
+main{
+  margin-top: 150px;
+}
+
 .starter-template {
   padding: 1.2rem;
   text-align: center;

@@ -5,7 +5,7 @@ $(document).ready(function(){
 	if(userInfo){
 		userInfo = JSON.parse(userInfo);
 		$('#welcome_label').text("WELCOME " + userInfo.username.toUpperCase());
-		$('#span_username').text(userInfo.username);
+		$('.span_username').text(userInfo.username);
 	}
 
 	$('#button_logout').click(function(){
@@ -51,15 +51,18 @@ $(document).ready(function(){
 		$(this).prev().css({"transform": "scale(1)"});
 	});
 
-	/*
 	$('.privacyandterms').click(function(){
 		if($(this).attr('id') === 'terms'){
-			$(modal_terms).modal('show');
+			$('#modal-terms').modal('show');
 		}
 		else{
-			$(modal_privacy).modal('show');
+			$('#modal_privacy').modal('show');
 		}
-	});*/
+	});
 
 });
+
+
+
+
 

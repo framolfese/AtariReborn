@@ -7,7 +7,7 @@
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $email = $_POST['mail'];
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
     $return_data = array();
 
     $mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);

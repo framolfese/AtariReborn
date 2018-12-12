@@ -99,14 +99,14 @@
                 <div class="form-row">
                     <div class="form-group sizeDivButton">
                         <label for="birth_date">Name On Card :</label>
-                        <input class="form-control" name="name_on_card" id="name_on_card" placeholder="Complete name on the card">
+                        <input class="form-control donation" name="name_on_card" id="name_on_card" placeholder="Complete name on the card">
                         <div class="invalid">
                             Valid name is required.
                         </div>
                     </div>
                     <div class="form-group sizeDivButton">
                         <label for="pincode">Credit Card Number :</label>
-                        <input class="form-control" name="cc_number" id="cc_number" placeholder="16 numbers">
+                        <input class="form-control donation" name="cc_number" id="cc_number" placeholder="16 numbers">
                         <div class="invalid">
                             Valid credit card is required.
                         </div>
@@ -115,28 +115,28 @@
                 <div class="form-row">
                     <div class="form-group sizeDivButton">
                         <label for="course">Import:</label>
-                        <input class="form-control" name="import" id="import" placeholder="Ex. 300.56 (euro)">
+                        <input class="form-control donation" name="import" id="import" placeholder="Ex. 300.56 (euro)">
                         <div class="invalid">
                             Do not joke.
                         </div>
                     </div>
                     <div class="form-group sizeDivButton">
                         <label for="email">Expiration :</label>
-                        <input class="form-control" name="expiration" id="expiration" placeholder="MM/AA"/>
+                        <input class="form-control donation" name="expiration" id="expiration" placeholder="MM/AA"/>
                         <div class="invalid">
                             Valid date is required.
                         </div>
                     </div>
                     <div class="form-group sizeDivButton">
                         <label for="email">CVV :</label>
-                        <input class="form-control" name="cvv" id="cvv" placeholder="Look behind your card"/>
+                        <input class="form-control donation" name="cvv" id="cvv" placeholder="Look behind your card"/>
                         <div class="invalid">
                             Valid CVV is required.
                         </div>
                     </div>
                 </div>
-                    <div class="form-submit ">
-                        <button class="btn btn-outline-danger my-2 mr-sm-2">Reset All</button>
+                    <div class="form-submit">
+                        <button id="reset_form" class="btn btn-outline-danger my-2 mr-sm-2" type="button">Reset All</button>
                         <button class="btn btn-outline-danger my-2 mr-sm-2" type="submit">Submit</button>
                     </div>
                 </div>
@@ -153,7 +153,7 @@
               </button>
             </div>
             <div class="modal-body">
-              'You have just joined our family!
+                <div class="message">You have just joined our family!</div>
             </div>
             <div class="modal-footer">
             <button id="button_login_now" class="btn btn-outline-danger my-2 mr-sm-2" >Log In Now</button>

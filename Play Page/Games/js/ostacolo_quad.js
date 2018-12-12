@@ -3,6 +3,7 @@ function Square() {
 	this.y = 0;
     
     this.show = function() {
+        rectMode(CORNER);
 		fill(255, 100, 0);
 		rect(this.x, this.y, scl*2, scl*2);
     }

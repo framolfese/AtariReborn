@@ -4,6 +4,7 @@
     DEFINE('DB_HOST', 'localhost');
     DEFINE('DB_DATABASE', 'accounts');
     
+    $game = $_POST['game'];
     $return_data = array();
 
     $mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
@@ -12,7 +13,9 @@
       die('Connect Error ('.$mysqli->connect_errno.') '.$mysqli->connect_error);
     }
     
-    $stmt = "SELECT * FROM snake_ranking WHERE 1 ORDER BY points DESC";
+    if($game === "snake") $stmt = "SELECT * FROM snake_ranking WHERE 1 ORDER BY points DESC";
+    else $stmt = "SELECT * FROM space_ranking WHERE 1 ORDER BY points DESC";
+    
     $mysqli_result = $mysqli->query($stmt);
     $num_rows = $mysqli_result->num_rows;
     $idx = 0;

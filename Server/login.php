@@ -5,7 +5,7 @@
     DEFINE('DB_DATABASE', 'accounts');
     
     $email = $_POST['mail'];
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
     $return_data = array();
     $name = null;
 

@@ -28,7 +28,7 @@ $(document).ready(function(){
 	}
 
 	function validateNameOnCard(input){
-		if(input.trim().match(/^[a-z]+$/i) == null) {
+		if(input.trim().match(/^[a-z\s]+$/i) == null) {
 			return false;
 		}
 		else return true;
@@ -64,6 +64,7 @@ $(document).ready(function(){
 
 	function validateCVV(input){
 		if(input.trim() == '' || input.trim().length != 3) return false;
+		else if(parseInt(input) < 100) return false;
 		else if(isNaN(parseInt(input))) return false;
 		else return true;
 	}
@@ -86,13 +87,10 @@ $(document).ready(function(){
 		var lastName = $('#last_name');
 		var mail = $('#mail');
 		var password = $('#password');
-		var nameOnCard = $('#name_on_card');
-		var ccv = $('#cvv');
-		var importo = $('#import');
-		var ccnumber = $('#cc_number');
-		var expiration = $('#expiration');
 		var toShow = Array();
 		var toCheckObb = $('.obb');
+		var donationInputs = $('.donation');
+		var donationMade = false;
 
 		$('.invalid').hide();
 
@@ -114,40 +112,73 @@ $(document).ready(function(){
 			}
 		}
 
+		for(var i=0; i<donationInputs.length; i++){
+			if($(donationInputs[i]).val() != "") donationMade = true;
+		}
+
 		if(toShow.length > 0){
 			for(var i=0; i<toShow.length; i++) $(toShow[i]).next().show();
 			return;
 		}
+
+		if(donationMade){
+			for(var i=0; i<donationInputs.length; i++){
+				if(i == 0) {
+					if(!validateNameOnCard($(donationInputs[i]).val())) toShow.push(donationInputs[i]);
+				}
+				else if(i == 1){
+					if(!validateCCNumber($(donationInputs[i]).val())) toShow.push(donationInputs[i]);
+				}
+				else if(i == 2){
+					if(!validateImport($(donationInputs[i]).val())) toShow.push(donationInputs[i]);
+				} 
+				else if(i == 3){
+					if(!validateExpiration($(donationInputs[i]).val())) toShow.push(donationInputs[i]);
+				}
+				else{
+					if(!validateCVV($(donationInputs[i]).val())) toShow.push(donationInputs[i]);
+				}
+			}
+
+			if(toShow.length > 0){
+				for(var i=0; i<toShow.length; i++) $(toShow[i]).next().show();
+				return;
+			}
+
+			else{
+				var modal_body = $('.modal-body');
+				$('<img class="img-modal" src="images/donation.jpeg">').insertBefore($(modal_body).children()[0]);
+				$('<div class="message message-donation">And thank you for the donation... ;)</div>').insertAfter($(modal_body).children()[1]);
+			}
+		}
 		
-		else{
-			var toSend = {fname:$(firstName).val().trim(),
+		var toSend = {fname:$(firstName).val().trim(),
 						lname:$(lastName).val().trim(),
 						mail:$(mail).val().trim(),
 						password:$(password).val().trim()
-			};
+		};
 
-			var ajaxRequest1 =$.ajax({
+		var ajaxRequest1 =$.ajax({
 					type:'POST',
 					url:'http://localhost:8888/Progetto/Server/signup.php',
 					dataType:'json',
 					data:toSend
-			});
+		});
 
-			ajaxRequest1.done(function(return_data){
-				if(return_data.status){
-					toSession = return_data;
-					$('#modalSuccess').modal('show');
-				}
-				else{/*da gestire gli errori*/
-					var errore = return_data.errore;
-					alert(errore);
-				}
-			});
+		ajaxRequest1.done(function(return_data){
+			if(return_data.status){
+				toSession = return_data;
+				$('#modalSuccess').modal('show');
+			}
+			else{
+				var errore = return_data.errore;
+				alert(errore);
+			}
+		});
 
-			ajaxRequest1.fail(function(return_data){
-				alert("Error with server, please try again");
-			});
+		ajaxRequest1.fail(function(return_data){
+			alert("Error with server, please try again");
+		});
 
-		}
 	});
 });

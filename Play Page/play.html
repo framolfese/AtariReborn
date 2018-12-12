@@ -13,7 +13,7 @@
     <link href="../css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="css/play.css" type="text/css" rel="stylesheet">
     <link href="css/carousel.css" type="text/css" rel="stylesheet">
-    <link href="SnakeGame/css/style.css" type="text/css" rel="stylesheet">
+    <link href="css/style_game.css" type="text/css" rel="stylesheet">
   </head>
 
   <body>
@@ -60,13 +60,13 @@
       </div>
 
       <div id="multiCollapseExample1" class="card-deck collapse">
-          <div id="cardSnake" class="card" onclick="start_snake()">
+          <div id="cardSnake" class="card" onclick="start('snake')">
             <img class="card-img-top" src="images/snake_game_nokia_youtube_750x500.jpg" alt="Card image cap">
             <div class="card-body">
               <label class="card-title">SNAKE</label>
             </div>
           </div>
-          <div id="cardSpace" class="card">
+          <div id="cardSpace" class="card" onclick="start('space')">
             <img class="card-img-top" src="images/space_invader_by_monstercrapule.jpg" alt="Card image cap">
             <div class="card-body">
               <h6 class="card-title">SPACE INVADERS</h6>  
@@ -136,13 +136,13 @@
         <p>&copy; 2018-2019 M&M's, Inc. &middot; <a id="privacy" class="privacyandterms" style="color: #dc3545">Privacy</a> &middot; <a id="terms" class="privacyandterms" style="color: #dc3545">Terms</a></p>
       </footer>
 
-      <!--Snake popup-->
-      <div class="modal fade bd-example-modal-lg" id="snakeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" onhide.bs.modal="onhide()">
+      <!--Game popup-->
+      <div class="modal fade bd-example-modal-lg" id="gameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" onhide.bs.modal="onhide()">
         <div class="modal-dialog mymodal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">Hey 
-              <span id="span_username">--</span>
+              <span class="span_username">--</span>
               , you have collected
               <span id="span_points">--</span>
               points!
@@ -155,7 +155,7 @@
               <div id='canvas-holder' class="mycol">
               </div>
               <div id="col-dx" class="mycol">
-                <img class="img-table" src="SnakeGame/images/header.jpg">
+                <img class="img-table" src="">
                   <table class="table">
                       <thead class="thead-dark">
                         <tr>
@@ -226,6 +226,55 @@
         </div>
       </div>
     </main>
+    
+    <div class="modal fade" id="modal_privacy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLongTitle">Privacy Policy</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <strong>1. INFORMATIONS</strong>
+          <p>Username, password and e-mail given on account creation.</p>
+          <p>Informations for the user's (f.e. name, email). This informations allow us to "find" the user on this website.</p>
+          <strong>2. SHARING USER'S INFORMATIONS</strong>
+          <p>We do not rent or sell information in a world outside of this site, unless otherwise indicated in this Policy.</p>
+          <strong>3. ABOUT STORING USER'S INFORMATIONS.</strong>
+          <p>Upon registration on this website, the user's metadata will be stored in an inner php database managed by our developing team</p>
+          <p>When you try to log in, the site executes a request to the database that will answer with the metadata, this data will not be seen by other world wide web domains, this to ensure the privacy of our users</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modal-terms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Terms</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Upon registration, the user can explore the gaming area of the website.</p>
+            <p>Registration entails that if a user tries to modify some informations about rankings or gaming code, it will be perma-banned from this website. Said in a nutshell, no hacks are allowed here.</p>
+            <p>If a user causes damages to the site, it will be tracked by our team and reported to the authority</p>
+            <p>If a user declares the partecipation or the ownership of this site without an authorization by our developing team, it will be reported to the authority, 
+                and we will proceed by lawsuits.</p>
+            <p>Chat and Forum are not implemented, so there will be no following terms about chatting or posting rules.</p>    
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+          </div>
+        </div>
+    </div>
   </body>
   
   <!--Linko JS-->
@@ -234,13 +283,17 @@
   <script src="js/my_JQuery.js"></script>
 
   <!--P5.js JS-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
-
-  <!--Snake JS-->
-  <script src="SnakeGame/js/snake.js"></script>
-  <script src="SnakeGame/js/func_snake.js"></script>
-  <script src="SnakeGame/js/script_scrollbar.js"></script>
-  <script src="SnakeGame/js/ostacolo_quad.js"></script>
+  <script src="../js/p5.js"></script>
+  <script src="../js/p5.dom.js"></script>
+  <script src="../js/p5.sound.js"></script>
+  
+  <!-- Games JS-->
+  <script src="Games/js/snake.js"></script>
+  <script src="Games/js/script_scrollbar.js"></script>
+  <script src="Games/js/ostacolo_quad.js"></script>
+  <script src="Games/js/drop.js"></script>
+  <script src="Games/js/ship.js"></script>
+  <script src="Games/js/target.js"></script>
+  <script src="Games/js/func_games.js"></script>
+  
 </html>

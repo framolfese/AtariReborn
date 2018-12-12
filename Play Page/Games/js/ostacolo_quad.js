@@ -1,10 +1,14 @@
-function Square() {
+function Square(img) {
 	this.x = 0;
-	this.y = 0;
+    this.y = 0;
+    this.img = img;
     
     this.show = function() {
         rectMode(CORNER);
-		fill(255, 100, 0);
+        noFill();
+        noStroke();
+        imageMode(CENTER);
+        image(this.img, this.x + 20, this.y + 20, 60, 60);
 		rect(this.x, this.y, scl*2, scl*2);
     }
     

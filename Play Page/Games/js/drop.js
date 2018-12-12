@@ -11,7 +11,7 @@ function Drop(x, y) {
 
 	this.show = function() {
 		noStroke();
-		fill(150, 0, 255);
+		fill(0, 200, 0);
 		ellipse(this.x, this.y, this.r*2, this.r*2);
 	}
 

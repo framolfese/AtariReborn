@@ -1,15 +1,17 @@
 //file relativo alla navicella
 
-function Ship() {
+function Ship(img) {
 	this.x = width/2;
 	this.y = height-10;
 	this.xdir = 0;
+	this.img = img;
 
 	this.show = function() {
-		fill(255);
+		noFill();
 		rectMode(CENTER);
+		imageMode(CENTER);
+		image(this.img, this.x, this.y-10, 50, 50);
 		rect(this.x, this.y, 20, 20);
-		
 	}
 
 	this.setDir = function(dir) {
@@ -17,7 +19,7 @@ function Ship() {
 	}
 
 	this.move = function(dir) {
-		this.x += this.xdir*5; 
+		this.x += this.xdir*10; 
 	}
 
 	this.hitEdge = function() {

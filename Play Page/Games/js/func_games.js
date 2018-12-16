@@ -43,7 +43,6 @@ function preload(){
 
 function setup() {
 	if(game == "snake"){
-		console.log("entrato in setup snake");
 		if(!gameover){
 			s = new Snake();
 			for(var i = 0; i < 10; i++){
@@ -55,7 +54,6 @@ function setup() {
 		}
 	}
 	else if(game == "space"){
-		console.log("entrato in setup space");
 		if(!gameover){
 			ship = new Ship(ship_img);
 			for(var i = 0; i < target_da_uccidere; i++){
@@ -69,7 +67,6 @@ function setup() {
 	song_snake.rate(0.6);
 	song_space.setVolume(0.1);
 	song_gameover.setVolume(0.05);	
-	console.log("entrato in setup base");
 	canvas = createCanvas(scl*42, scl*37);
 	canvas.parent('canvas-holder');
 	background(0);
@@ -78,7 +75,6 @@ function setup() {
 function draw() {
 	if(game == "snake"){
 		if(!gameover){
-			console.log("snake partito");
 			background(0);
 
 			if(s.eat(food)) {
@@ -122,12 +118,10 @@ function draw() {
 				sendValuesToServer();
 				played = false;
 			}
-			console.log("gameover snake");
 		}
 	}
 	else if(game == "space"){
 		if(!gameover){
-			console.log("space partito");
 			background(0);
 			ship.show();
 			ship.move();
@@ -190,8 +184,8 @@ function draw() {
 			if(targets_killed == target_da_uccidere){
 				targets_killed = 0;
 				target_da_uccidere += 4;
-				speed_pos += 0.2;
-				speed_neg -= 0.2;
+				speed_pos += 0.5;
+				speed_neg -= 0.5;
 				for(var i = 0; i < target_da_uccidere / 4; i++){
 					for(var j = 0; j < 4; j++){
 						if(i%2 == 0) targets[4*i + j] = new Target(j*(80+40) + 30, 120 - 80*i, speed_pos, target_img);
@@ -215,17 +209,14 @@ function draw() {
 				sendValuesToServer();
 				played = false;
 			}
-			console.log("gameover space");
 		}
 	}
 	else{
-		console.log(game);
 		noLoop();
 	}
 }
 
 function onhide(){
-	console.log("entrato on hide");
 	clearInterval(interval);
 	gameover = true;
 	var rows_ranking = $('.row_ranking');
@@ -236,7 +227,6 @@ function onhide(){
 }
 
 function start(nameGame){
-	console.log(nameGame + ' ' + game);
 	game = nameGame;
 	document.getElementById("span_points").innerText = '--';
 	if(game == "snake") $('.img-table').attr('src','Games/images/header.jpg');
@@ -270,7 +260,6 @@ function start(nameGame){
 
 function play(){
 	if(game == "snake"){
-		console.log("fatto play snake");
 		document.getElementById("span_points").innerText = points;
 		squares = [];
 		if(played) song_snake.stop();
@@ -278,7 +267,6 @@ function play(){
 		song_snake.loop();
 	}
 	else if(game == "space"){
-		console.log("fatto play space");
 		target_da_uccidere = 4;
 		targets_killed = 0;
 		targets = [];
@@ -325,7 +313,6 @@ function pickLocation() {
 }
 
 function sendValuesToServer(){
-	console.log("invia dati al server");
 	var userInfo = sessionStorage.getItem("userInformation");
 	userInfo = JSON.parse(userInfo);
 

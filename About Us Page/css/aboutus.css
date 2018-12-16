@@ -43,22 +43,6 @@ body, html, main {
   color: white;
 }
 
-/* stylelint-disable selector-list-comma-newline-after */
-
-.blog-header {
-  line-height: 1;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.blog-header-logo {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: 2.25rem;
-}
-
-.blog-header-logo:hover {
-  text-decoration: none;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
 }
@@ -87,36 +71,6 @@ h1, h2, h3, h4, h5, h6 {
   .h-md-250 { height: 250px; }
 }
 
-/*
- * Blog name and description
- */
-.blog-title {
-  margin-bottom: 0;
-  font-size: 2rem;
-  font-weight: 400;
-}
-.blog-description {
-  font-size: 1.1rem;
-  color: #999;
-}
-
-@media (min-width: 40em) {
-  .blog-title {
-    font-size: 3.5rem;
-  }
-}
-
-/* Pagination */
-.blog-pagination {
-  margin-bottom: 4rem;
-}
-.blog-pagination > .btn {
-  border-radius: 2rem;
-}
-
-/*
- * Blog posts
- */
 .blog-post {
   margin-bottom: 4rem;
 }
@@ -129,9 +83,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #999;
 }
 
-/*
- * Footer
- */
 .blog-footer {
   padding: 2.5rem 0;
   color: #999;
@@ -181,12 +132,6 @@ h1, h2, h3, h4, h5, h6 {
 #tabella_destra_profilo{
   margin-right: 5rem;
   display: none;
-}
-
-.readingClass{
-  -webkit-filter: blur(3px); /* Safari 6.0 - 9.0 */
-  filter: blur(3px);
-  background-color: #373535;
 }
 
 .mycontainer{

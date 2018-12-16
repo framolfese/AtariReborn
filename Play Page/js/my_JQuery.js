@@ -12,14 +12,14 @@ $(document).ready(function(){
 		sessionStorage.removeItem("userInformation");
 	});
 
-	$("#carouselExampleIndicators").hover(function(){
+	$("#my-carousel").hover(function(){
 		$('.d-block').addClass('withBlur');
-		$("#carouselExampleIndicators").addClass('classWithShadow');
+		$("#my-carousel").addClass('classWithShadow');
 		$('.overlay').slideDown('slow');
 		
 	}, function(){
 		$('.d-block').removeClass('withBlur');
-		$("#carouselExampleIndicators").removeClass('classWithShadow');	
+		$("#my-carousel").removeClass('classWithShadow');	
 		$('.overlay').slideUp('slow');
 		
 	});

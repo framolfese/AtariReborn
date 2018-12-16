@@ -6,15 +6,6 @@ $(document).ready(function(){
 	var col_sx = $(".colsx").find("li");
 	var last_schiacced = null;
 
-
-	function isInArray(value, array) {
-		var i = 0;
-		for(i; i<array.length; i++){
-			if(array[i] === (value)) return true;
-		}
-		return false;
-	}
-
 	function findIndex(value, array) {
 		var i = 0;
 		for(i; i<array.length; i++){
@@ -136,7 +127,6 @@ $(document).ready(function(){
 			else $('#statusbar').css({"height": ((elem_idx+1) * 60 + 2)  + "rem"});
 		}
 		else{
-			console.log(last_schiacced);
 			$(t).removeClass('schiacciato-inverted');
 			$(t).parent().children().not(t).addClass('withBlur');
 			$(t).next().hide();

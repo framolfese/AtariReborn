@@ -18,9 +18,9 @@
     $stmt = "SELECT * FROM users where email='$email' && password='$password'";
     $mysqli_result = $mysqli->query($stmt);
     $row = $mysqli_result->fetch_array(MYSQLI_NUM);
-    $name = $row[0];
     
     if($mysqli_result->num_rows == 1) {
+        $name = $row[0];
         $return_data['status'] = true;
         $return_data['usermail'] = $email;
         $return_data['username'] = $name;

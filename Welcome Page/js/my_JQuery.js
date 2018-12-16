@@ -24,14 +24,14 @@ $(document).ready(function(){
     	}
 	});
 	
-	$("#carouselExampleIndicators").hover(function(){
+	$("#my-carousel").hover(function(){
 		$('.d-block').addClass('withBlur');
-		$("#carouselExampleIndicators").addClass('classWithShadow');
+		$("#my-carousel").addClass('classWithShadow');
 		$('.overlay').slideDown('slow');
 		
 	}, function(){
 		$('.d-block').removeClass('withBlur');
-		$("#carouselExampleIndicators").removeClass('classWithShadow');	
+		$("#my-carousel").removeClass('classWithShadow');	
 		$('.overlay').slideUp('slow');
 		
 	});
@@ -41,8 +41,6 @@ $(document).ready(function(){
 	}, function(){
 		$(this).removeClass('classWithShadow');
 	});
-
-	
 
 	$('.privacyandterms').click(function(){
 		if($(this).attr('id') === 'terms'){

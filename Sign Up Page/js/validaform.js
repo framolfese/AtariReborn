@@ -168,6 +168,7 @@ $(document).ready(function(){
 		ajaxRequest1.done(function(return_data){
 			if(return_data.status){
 				toSession = return_data;
+				console.log(return_data);
 				$('#modalSuccess').modal('show');
 			}
 			else{

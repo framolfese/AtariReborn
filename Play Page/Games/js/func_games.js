@@ -108,6 +108,7 @@ function draw() {
 			canvas = createCanvas(scl*42, scl*37);
 			canvas.parent('canvas-holder');
 			background(0);
+			song_snake.setLoop(false);
 			song_snake.stop();
 			noLoop();
 			song_gameover.play();
@@ -184,8 +185,8 @@ function draw() {
 			if(targets_killed == target_da_uccidere){
 				targets_killed = 0;
 				target_da_uccidere += 4;
-				speed_pos += 0.5;
-				speed_neg -= 0.5;
+				speed_pos += 0.3;
+				speed_neg -= 0.3;
 				for(var i = 0; i < target_da_uccidere / 4; i++){
 					for(var j = 0; j < 4; j++){
 						if(i%2 == 0) targets[4*i + j] = new Target(j*(80+40) + 30, 120 - 80*i, speed_pos, target_img);
@@ -199,6 +200,7 @@ function draw() {
 			canvas = createCanvas(scl*42, scl*37);
 			canvas.parent('canvas-holder');
 			background(0);
+			song_space.setLoop(false);
 			song_space.stop();
 			noLoop();
 			song_gameover.play();
@@ -264,7 +266,7 @@ function play(){
 		squares = [];
 		if(played) song_snake.stop();
 		song_snake.play();
-		song_snake.loop();
+		song_snake.setLoop(true);
 	}
 	else if(game == "space"){
 		target_da_uccidere = 4;
@@ -273,7 +275,7 @@ function play(){
 		drops = [];
 		if(played) song_space.stop();
 		song_space.play();
-		song_space.loop();
+		song_space.setLoop(true);
 	}
 	points = 0;
 	document.getElementById("span_points").innerText = points;

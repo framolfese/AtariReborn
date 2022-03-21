@@ -1,3 +1,3 @@
 # ATARI REBORN
 
-progetto phiko
+An academic project website using HTML5/CSS/JavaScript/JQuery.
